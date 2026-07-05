@@ -1,0 +1,508 @@
+/* toggle btn */
+
+.jarvis-btn{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 68px;
+    height: 68px;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.jarvis-btn img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+
+/* popup */
+.jarvis-popup{
+    position: fixed;
+    right: 18px;
+    bottom: 98px;
+
+    width: 360px;
+    min-width: 360px;
+    max-width: 360px;
+
+    height: 580px;
+    min-height: 580px;
+    max-height: 580px;
+
+    border-radius: 38px;
+    overflow: hidden;
+
+    z-index: 999999;
+    display: none;
+
+    box-shadow: 0 20px 80px rgba(0, 0, 0, .32);
+}
+
+.jarvis-overlay{
+    position: absolute;
+    inset: 0;
+}
+
+.jarvis-content{
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    padding: 18px 20px 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.jarvis-top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jarvis-orb-wrap{
+    position: relative;
+    margin-top: 2px;
+}
+
+.jarvis-orb-glow{
+    position: absolute;
+    inset: 0;
+    transform: scale(1.8);
+    border-radius: 999px;
+    filter: blur(75px);
+    opacity: .6;
+}
+
+.jarvis-orb{
+    position: relative;
+    width: 118px;
+    height: 118px;
+    border-radius: 999px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.jarvis-title{
+    margin-top: 14px;
+    font-size: 28px;
+    line-height: 1.1;
+    font-weight: 700;
+    align-items: center;
+}
+
+.jarvis-sub{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.jarvis-status{
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.jarvis-wave{
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 28px;
+    opacity: 0;
+    transition: .3s;
+}
+
+.jarvis-wave.active{
+    opacity: 1;
+}
+
+.jarvis-wave span{
+    width: 5px;
+    border-radius: 999px;
+    animation: 1.2s infinite ease-in-out;
+}
+
+.jarvis-wave span:nth-child(1){
+    height: 14px;
+}
+
+.jarvis-wave span:nth-child(2){
+    height: 28px;
+}
+
+.jarvis-wave span:nth-child(3){
+    height: 16px;
+}
+
+.jarvis-wave span:nth-child(4){
+    height: 34px;
+}
+
+.jarvis-wave span:nth-child(5){
+    height: 20px;
+}
+
+@keyframes wave{
+    0% {
+        opacity: .4;
+        transform: scaleY(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scaleY(1.2);
+    }
+
+    100% {
+        opacity: .4;
+        transform: scaleY(.8);
+    }
+}
+
+.jarvis-user-text{
+    margin-top: 10px;
+    min-height: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: 600;
+}
+
+.jarvis-ai-text{
+    margin-top: 2px;
+    min-height: 18px;
+    font-size: 13px;
+    line-height: 1.4;
+    text-align: center;
+    opacity: .82;
+}
+
+.jarvis-bottom{
+    position: relative;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.jarvis-mic{
+    position: relative;
+    z-index: 2;
+
+    width: 74px;
+    height: 74px;
+
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+
+    color: white;
+    font-size: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .3s;
+
+    /* Smooth shadow animation */
+    animation: micFloat 2.5s infinite ease-in-out;
+}
+
+.jarvis-mic:hover{
+    transform: scale(1.06);
+}
+
+@keyframes micFloat {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.jarvis-mic-icon{
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+/* dark theme */
+.theme-dark {
+    background: #050816;
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.theme-dark .jarvis-overlay{
+    background: radial-gradient(circle at top, rgba(168,85,247,.18), transparent 45%);
+}
+
+.theme-dark .jarvis-orb,
+.theme-dark .jarvis-orb-glow{
+    background: linear-gradient(135deg, #4cc9ff, #7c3aed, #ec4899);
+}
+
+.theme-dark .jarvis-title{
+    color: white;
+}
+
+.theme-dark .jarvis-sub{
+    color: rgba(255, 255, 255, .68);
+}
+
+.theme-dark .jarvis-status{
+    color: #22e3a6;
+}
+
+.theme-dark .jarvis-wave span {
+    background: #22e3a6;
+}
+
+.theme-dark .jarvis-user-text{
+    color: white;
+}
+
+.theme-dark .jarvis-ai-text {
+    color: rgba(255, 255, 255, .72);
+}
+
+/* Dark theme buttons */
+.theme-dark .jarvis-mic,
+.theme-dark.jarvis-btn{
+    background: linear-gradient(135deg, #7c3aed, #4f8cff);
+
+
+/* large premium glow */
+box-shadow: 
+0 0 35px rgba(124, 58, 237, .55)
+0 0 90px rgba(79, 140, 255, .38)
+0 0 140px rgba(124, 58, 237, .22)
+;
+}
+
+/* light theme */
+.theme-light{
+    background: linear-gradient(135deg, #ffffff, #eef6ff);
+    border: 1px solid #dbeafe;
+}
+
+.theme-light .jarvis-overlay{
+    background: radial-gradient(circle at top, rgba(59,130,246,.12), transparent 45%);
+}
+
+.theme-light .jarvis-orb,
+.theme-light .jarvis-orb-glow{
+    background: linear-gradient(135deg, #7dd3fc, #67e8f9, #f5d0fe);
+}
+
+.theme-light .jarvis-title{
+    color: #475569;
+}
+
+.theme-light .jarvis-status{
+    color: #3b82f6;
+}
+
+.theme-light .jarvis-wave span{
+    background: #60a5fa;
+}
+
+.theme-light .jarvis-user-text{
+    color: #081028;
+}
+
+.theme-light .jarvis-ai-text{
+    color: #475569;
+}
+
+/* Light theme button */
+.theme-light .jarvis-mic,
+.theme-light.jarvis-btn{
+    background: linear-gradient(135deg, #60a5fa, #06b6d4);
+
+
+/* Large soft glow */
+box-shadow: 
+0 0 30px rgba(59, 130, 246, .38),
+0 0 85px rgba(6, 182, 212, .28),
+0 0 130px rgba(59, 130, 246, .16)
+;
+}
+
+/* Glass theme */
+.theme-glass{
+    background: rgba(0, 0, 0, .28);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(45px);
+    border: 1px solid rgba(255, 255, 255, .08);
+}
+
+.theme-glass .jarvis-overlay{
+    background: radial-gradient(circle at top, rgba(255,255,255,.05));
+}
+
+.theme-glass .jarvis-orb,
+.theme-glass .jarvis-orb-glow{
+    background: linear-gradient(135deg, #bae6fd, #c4b5fd, #f5d0fe);
+}
+
+.theme-glass .jarvis-title{
+    color: white;
+}
+
+.theme-glass .jarvis-sub{
+    color: rgba(255, 255, 255, .75);
+}
+
+.theme-glass .jarvis-status{
+    color: #a5f3fc;
+}
+
+.theme-glass .jarvis-wave span{
+    background: #a5f3fc;
+}
+
+.theme-glass .jarvis-user-text{
+    color: white;
+}
+
+.theme-glass .jarvis-ai-text{
+    color: rgba(255, 255, 255, .72);
+}
+
+/* Glass Buttons */
+
+.theme-glass .jarvis-mic,
+.theme-glass.jarvis-btn{
+    background: linear-gradient(135deg, #38bff8a3, #8a5cf6a8);
+
+    /*Frosted neon Glow */
+    box-shadow: 
+    0 0 35px rgba(34, 211, 238, .34),
+    0 0 95px rgba(139, 92, 246, .28),
+    0 0 150px rgba(56, 189, 248, .18)
+    ;
+}
+
+/* Neon Theme */
+
+.theme-neon{
+    background: #03120d;
+    border: 1px solid rgba(16, 185, 129, .18);
+}
+
+.theme-neon .jarvis-overlay{
+    background: radial-gradient(circle at top, rgba(16, 185, 129, .18), transparent 45%);
+}
+
+.theme-neon .jarvis-orb,
+.theme-neon .jarvis-orb-glow{
+    background: linear-gradient(135deg, #34d399, #10b981, #14b8a6);
+}
+
+.theme-neon .jarvis-title{
+    color: #ecfdf5;
+}
+ 
+.theme-neon .jarvis-sub{
+    color: rgba(209, 250, 229, .72);
+}
+
+.theme-neon .jarvis-status{
+    color: #6ee7b7;
+}
+
+.theme-neon .jarvis-wave span{
+    background: #6ee7b7;
+}
+
+.theme-neon .jarvis-user-text{
+    color: #ecfdf5;
+}
+
+.theme-neon .jarvis-ai-text{
+    color: rgb(209, 250, 229).75;
+}
+
+/* Neon Theme Buttons */
+
+.theme-neon .jarvis-mic,
+.theme-neon.jarvis-btn{
+    background: linear-gradient(135deg, #10b981, #22c55e);
+
+    /* Strong neon Glow */
+    box-shadow: 0 0 38px  rgba(16, 185, 129, .45),
+                0 0 100px rgba(34, 197, 94, .32),
+                0 0 160px rgba(16, 185, 129, .20)
+    ;
+}
+
+@media (max-width:640px) {
+    .jarvis-popup{
+        width: 340px;
+        min-width: 340px;
+        max-width: 340px;
+
+        height: 560px;
+        min-height: 560px;
+        max-height: 560px;
+
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 82px;
+
+        border-radius: 30px;
+    }
+    .jarvis-btn{
+        width: 64px;
+        height: 64px;
+        right: 14px;
+        bottom: 14px;
+    }
+
+    .jarvis-btn img{
+        height: 30px;
+        width: 30px;
+    }
+
+    .jarvis-title{
+        font-size: 26px;
+    }
+
+    .jarvis-sub{
+        font-size: 13px;
+    }
+}
