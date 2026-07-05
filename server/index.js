@@ -12,7 +12,7 @@ dotenv.config()
 const app = express()
 const privateCors = cors({
     origin: [
-        "http://localhost:5173"
+        "https://virtual-assistant-ai-5fg6.onrender.com"
     ],
     credentials:true
 })
