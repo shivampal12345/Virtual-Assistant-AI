@@ -9,7 +9,7 @@ import Builder from './pages/Builder';
 import Billing from './pages/Billing';
 import {Toaster} from 'react-hot-toast'
 
-export const ServerUrl = "http://localhost:8000"
+export const ServerUrl = "https://virtual-assistant-ai-server.onrender.com"
 export const CLIENT_URL = "http://localhost:5173"
 
 function App() {
