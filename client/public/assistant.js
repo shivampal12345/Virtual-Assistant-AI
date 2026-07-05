@@ -12,7 +12,7 @@
 
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "http://localhost:5173/assistant.css";
+  link.href = "https://virtual-assistant-ai-5fg6.onrender.com/assistant.css";
 
   document.head.appendChild(link);
 
@@ -68,7 +68,7 @@
 
         <button class="jarvis-mic">
 
-            <img src="http://localhost:5173/mic.svg" alt="mic" class="jarvis-mic-icon"/>
+            <img src="https://virtual-assistant-ai-5fg6.onrender.com/mic.svg" alt="mic" class="jarvis-mic-icon"/>
 
         </button>
 
@@ -83,7 +83,7 @@
      const button = document.createElement("button")
     button.className = `jarvis-btn theme-${theme}`
 
-    button.innerHTML = `<img src= "http://localhost:5173/logo.png" alt="logo"/>`
+    button.innerHTML = `<img src= "https://virtual-assistant-ai-5fg6.onrender.com/logo.png" alt="logo"/>`
     document.body.appendChild(button)
 
     //toggle popup
