@@ -10,7 +10,7 @@ import Billing from './pages/Billing';
 import {Toaster} from 'react-hot-toast'
 
 export const ServerUrl = "https://virtual-assistant-ai-server.onrender.com"
-export const CLIENT_URL = "http://localhost:5173"
+export const CLIENT_URL = "https://virtual-assistant-ai-5fg6.onrender.com"
 
 function App() {
 
